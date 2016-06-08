@@ -1,0 +1,23 @@
+{
+  "name": "react-native-stripe-api",
+  "version": "0.0.1",
+  "description": "A small React Native library for Stripe Rest API",
+  "main": "src/Stripe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcarpentier/react-native-stripe-api.git"
+  },
+  "keywords": [
+    "react-native",
+    "Stripe"
+  ],
+  "author": "Xavier Carpentier <contact@xaviercarpentier.com> (http://xaviercarpentier.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcarpentier/react-native-stripe-api/issues"
+  },
+  "homepage": "https://github.com/xcarpentier/react-native-stripe-api#readme"
+}
