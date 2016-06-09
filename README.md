@@ -8,24 +8,6 @@ The best Stripe library for React Native.
 ```bash
 $ npm i react-native-stripe-api --save
 ```
-### Basic Usage
-- Install `react-native` first
-
-```bash
-$ npm i react-native -g
-```
-
-- Initialization of a react-native project
-
-```bash
-$ react-native init myproject
-```
-
-- Then, edit `myproject/index.ios.js`, like this:
-
-```jsx
-
-```
 
 ## Setup
 
@@ -34,20 +16,14 @@ $ react-native init myproject
 This lib need a webhook url, details here : https://api.slack.com/incoming-webhooks.
 ```JavaScript
 const webhookURL = '<your webhook URL provided by Slack, ie. Incoming WebHooks>'
-const Slack = new Slack(webhookURL)
+const Stripe = new Stripe(webhookURL)
 ```
-### Example
 
-Just provide a file name env.js at root of the example project, see the example/env.example.js file.
-
-## Payload object
+## Functions
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| channel | string | '#general' | The channel where you will post a message |
-| username | string | 'bot' | The username you will use to post the message  |
-| text | string | 'text is empty' | The most important part, the message you will send |
-| 'icon_emoji' | string | ':iphone:' | The icon emoji with your message |
+| ??? | string | ':iphone:' | ??? |
 
 ## FAQ
 ### Is it supported and tested both on android and iOS?
