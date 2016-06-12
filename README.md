@@ -13,9 +13,9 @@ $ npm i react-native-stripe-api --save
 
 ### Stripe API
 
-This lib need a webhook url, details here : https://api.slack.com/incoming-webhooks.
+This lib need a Stripe API Key
 ```JavaScript
-const webhookURL = '<your webhook URL provided by Slack, ie. Incoming WebHooks>'
+const apiKey = '<your Stripe API Key>'
 const Stripe = new Stripe(webhookURL)
 ```
 
