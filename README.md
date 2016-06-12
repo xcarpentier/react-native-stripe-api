@@ -16,7 +16,7 @@ $ npm i react-native-stripe-api --save
 This lib need a Stripe API Key
 ```JavaScript
 const apiKey = '<your Stripe API Key>'
-const Stripe = new Stripe(webhookURL)
+const Stripe = new Stripe(apiKey)
 ```
 
 ## Functions
