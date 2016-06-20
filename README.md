@@ -1,7 +1,5 @@
 # react-native-stripe-api
 
-[![npm version](http://img.shields.io/npm/dm/react-native-stripe-api.svg?style=flat-square)](https://npmjs.org/package/react-native-stripe-api "View this project on npm")
-
 The best Stripe library for React Native.
 
 ### Installation
@@ -21,9 +19,16 @@ const Stripe = new Stripe(webhookURL)
 
 ## Functions
 
-| Key | Type | Default | Description |
+| Name | Return Type | Arguments | Description |
 | --- | --- | --- | --- |
-| ??? | string | ':iphone:' | ??? |
+| createToken | Promise | cardNumber: string, expMonth: string, expYear: string, cvc: string  | Create a new token (= new card) |
+| createCustomer | Promise | token: string, email: string | Create a new customer and add card (= new token) |
+| createCharge | Promise | amount: number, customer: string, description: string, currency: string = 'eur' | Create a new charge |
+| refund | Promise | chargeId: string | Refund a previous charge |
+| getCustomer | Promise | customerId: string | Retrieve customer by its id |
+| addCardToCustomer | Promise | token: string, customerId: string | Add a new card to a customer |
+| destroyCardOfCustomer | Promise | cardId: string, customerId: string | Delete a card from a customer |
+
 
 ## FAQ
 ### Is it supported and tested both on android and iOS?
