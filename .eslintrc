@@ -1,36 +1,12 @@
 {
-    "rules": {
-        "indent": [
-            2,
-            2,
-            {"SwitchCase": 1}
-        ],
-        "quotes": [
-            2,
-            "single"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "semi": [
-            2,
-            "always"
-        ]
-    },
-    "env": {
-        "es6": true,
-        "node": true,
-        "amd": true
-    },
-    "extends": "eslint:recommended",
-    "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true,
-        "modules": true,
-        "async": true
-    },
-    "plugins": [
-        "react"
-    ]
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "globals": {
+    "__DEV__": false
+  },
+  "rules": {
+    "global-require": [0],
+    "no-underscore-dangle": [2, { "allowAfterThis": false, "allow": ["_id"] }],
+    "import/no-unresolved": [2, { "commonjs": true, "ignore": ["\\.png$"] }]
+  }
 }
