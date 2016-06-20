@@ -1,5 +1,7 @@
 // @flow
 
+import 'babel-polyfill';
+
 const REQM = ' is required';
 const STRIPE_URL = 'https://api.stripe.com/v1/';
 

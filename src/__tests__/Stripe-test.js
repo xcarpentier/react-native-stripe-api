@@ -1,8 +1,12 @@
 jest.unmock('../Stripe');
 
-describe('sum', () => {
-  it('adds 1 + 2 to equal 3', () => {
-    const sum = require('../sum');
-    expect(sum(1, 2)).toBe(3);
+describe('Stripe', () => {
+  it('defaultHeader', () => {
+    const Stripe = require('../Stripe');
+
+    expect(new Stripe('testKey').defaultHeader()).toEqual({
+      Accept: 'application/json',
+      Authorization: 'Baerer testKey'
+    });
   });
 });
