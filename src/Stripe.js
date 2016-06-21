@@ -108,7 +108,7 @@ class Stripe {
     });
   }
 
-  refund(chargeId: string): Promise {
+  refundCharge(chargeId: string): Promise {
     if (!chargeId) throw new Error(`chargeId${REQM}`);
 
     return this.stripePostRequest('refunds', {

@@ -1,5 +1,7 @@
 # react-native-stripe-api
 
+[![Circle CI](https://circleci.com/gh/xcarpentier/react-native-stripe-api.svg?style=svg)](https://circleci.com/gh/xcarpentier/react-native-stripe-api)
+
 The best Stripe library for React Native.
 
 ### Installation
@@ -24,7 +26,7 @@ const Stripe = new Stripe(apiKey);
 | createToken | Promise | cardNumber: string, expMonth: string, expYear: string, cvc: string  | Create a new token (equivalent of a new card) |
 | createCustomer | Promise | token: string, email: string | Create a new customer and add card (or  token) |
 | createCharge | Promise | amount: number, customer: string, description: string, currency: string = 'eur' | Create a new charge |
-| refund | Promise | chargeId: string | Refund a previous charge |
+| refundCharge | Promise | chargeId: string | Refund a previous charge |
 | getCustomer | Promise | customerId: string | Retrieve customer by its id |
 | addCardToCustomer | Promise | token: string, customerId: string | Add a new card to a customer |
 | destroyCardOfCustomer | Promise | cardId: string, customerId: string | Delete a card from a customer |
