@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 5.6.0
+
+dependencies:
+  override:
+    - npm config set spin=false
+    - npm config set progress=false
+    - npm install
+  cache_directories:
+    - "node_modules"
+
+test:
+  override:
+    - npm run lint
+    - npm run flow
+    - npm run test
