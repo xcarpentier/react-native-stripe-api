@@ -1,12 +1,12 @@
 jest.unmock('../Stripe');
 
 describe('Stripe', () => {
-  it('defaultHeader', () => {
-    const Stripe = require('../Stripe');
+  it('get default header', () => {
+    const Stripe = require('../Stripe').default;
 
     expect(new Stripe('testKey').defaultHeader()).toEqual({
       Accept: 'application/json',
-      Authorization: 'Baerer testKey'
+      Authorization: 'Bearer testKey'
     });
   });
 });

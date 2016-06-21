@@ -21,8 +21,8 @@ const Stripe = new Stripe(apiKey);
 
 | Name | Return Type | Arguments | Description |
 | --- | --- | --- | --- |
-| createToken | Promise | cardNumber: string, expMonth: string, expYear: string, cvc: string  | Create a new token (= new card) |
-| createCustomer | Promise | token: string, email: string | Create a new customer and add card (= new token) |
+| createToken | Promise | cardNumber: string, expMonth: string, expYear: string, cvc: string  | Create a new token (equivalent of a new card) |
+| createCustomer | Promise | token: string, email: string | Create a new customer and add card (or  token) |
 | createCharge | Promise | amount: number, customer: string, description: string, currency: string = 'eur' | Create a new charge |
 | refund | Promise | chargeId: string | Refund a previous charge |
 | getCustomer | Promise | customerId: string | Retrieve customer by its id |

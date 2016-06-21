@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "flow": "flow",
     "check": "npm run lint && npm run flow",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -24,20 +24,10 @@
   },
   "homepage": "https://github.com/xcarpentier/react-native-stripe-api#readme",
   "jest": {
-    "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "packager/react-packager/src/Activity/"
-    ],
-    "testFileExtensions": [
-      "js"
-    ],
-    "unmockedModulePathPatterns": [
-      "promise",
-      "source-map"
-    ]
+    "scriptPreprocessor": "jestSupport/scriptPreprocess.js"
   },
   "devDependencies": {
+    "babel-core": "6.9.1",
     "babel-eslint": "6.0.4",
     "eslint": "2.13.0",
     "eslint-config-airbnb": "9.0.1",

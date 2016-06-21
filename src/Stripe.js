@@ -1,7 +1,5 @@
 // @flow
 
-import 'babel-polyfill';
-
 const REQM = ' is required';
 const STRIPE_URL = 'https://api.stripe.com/v1/';
 
@@ -28,7 +26,7 @@ class Stripe {
    * @param properties : object, key by form parm
    */
   async stripePostRequest(resource: string, properties: Object): Promise {
-    const formBody = Object.entries(properties)
+    const body = Object.entries(properties)
       .map(([key, value]) => `${key}=${value}`)
       .reduce((previous, current) => `${previous}&${current}`, '');
 
@@ -38,7 +36,7 @@ class Stripe {
         ...this.defaultHeader(),
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: formBody,
+      body,
     });
 
     return result.json();
@@ -88,6 +86,7 @@ class Stripe {
   createCustomer(token: string, email: string): Promise {
     if (!token) throw new Error(`token${REQM}`);
     if (!email) throw new Error(`email${REQM}`);
+
     return this.stripePostRequest('customers', {
       source: token,
       email,
@@ -100,6 +99,7 @@ class Stripe {
     if (!amount && amount !== 0) throw new Error(`amount${REQM}`);
     if (!customer) throw new Error(`customer${REQM}`);
     if (!description) throw new Error(`description${REQM}`);
+
     return this.stripePostRequest('charges', {
       amount,
       currency,
@@ -110,6 +110,7 @@ class Stripe {
 
   refund(chargeId: string): Promise {
     if (!chargeId) throw new Error(`chargeId${REQM}`);
+
     return this.stripePostRequest('refunds', {
       charge: chargeId,
     });
@@ -117,12 +118,14 @@ class Stripe {
 
   getCustomer(customerId: string): Promise {
     if (!customerId) throw new Error(`customerId${REQM}`);
+
     return this.stripeGetRequest('customers', customerId);
   }
 
   addCardToCustomer(token: string, customerId: string): Promise {
     if (!customerId) throw new Error(`customerId${REQM}`);
     if (!token) throw new Error(`token${REQM}`);
+
     return this.stripePostRequest(`customers/${customerId}/sources`, {
       source: token,
     });
@@ -131,6 +134,7 @@ class Stripe {
   destroyCardOfCustomer(cardId: string, customerId: string): Promise {
     if (!customerId) throw new Error(`customerId${REQM}`);
     if (!cardId) throw new Error(`cardId${REQM}`);
+
     return this.stripeDeleteRequest(`customers/${customerId}/sources/${cardId}`);
   }
 }
