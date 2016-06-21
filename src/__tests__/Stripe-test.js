@@ -1,6 +1,7 @@
 jest.unmock('../Stripe');
 
 describe('Stripe', () => {
+
   it('get default header', () => {
     const Stripe = require('../Stripe').default;
 
@@ -9,4 +10,5 @@ describe('Stripe', () => {
       Authorization: 'Bearer testKey'
     });
   });
+  
 });
