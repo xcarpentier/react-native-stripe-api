@@ -24,7 +24,19 @@
   },
   "homepage": "https://github.com/xcarpentier/react-native-stripe-api#readme",
   "jest": {
-    "scriptPreprocessor": "jestSupport/scriptPreprocess.js"
+    "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
+    "setupEnvScriptFile": "jestSupport/env.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "packager/react-packager/src/Activity/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "promise",
+      "source-map"
+    ]
   },
   "devDependencies": {
     "babel-core": "6.9.1",

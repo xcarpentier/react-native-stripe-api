@@ -15,10 +15,12 @@ class Stripe {
    * Return the default header entries : Accept and Authorization
    * @returns {Object} Default header Accept and Authorization
    */
-  defaultHeader: Function = () => ({
-    Accept: 'application/json',
-    Authorization: `Bearer ${this.stripeSecretKey}`,
-  });
+  defaultHeader() {
+    return {
+      Accept: 'application/json',
+      Authorization: `Bearer ${this.stripeSecretKey}`,
+    };
+  }
 
   /**
    * Generic method post to Stripe Rest API
@@ -123,8 +125,8 @@ class Stripe {
   }
 
   addCardToCustomer(token: string, customerId: string): Promise {
-    if (!customerId) throw new Error(`customerId${REQM}`);
     if (!token) throw new Error(`token${REQM}`);
+    if (!customerId) throw new Error(`customerId${REQM}`);
 
     return this.stripePostRequest(`customers/${customerId}/sources`, {
       source: token,
@@ -132,8 +134,8 @@ class Stripe {
   }
 
   destroyCardOfCustomer(cardId: string, customerId: string): Promise {
-    if (!customerId) throw new Error(`customerId${REQM}`);
     if (!cardId) throw new Error(`cardId${REQM}`);
+    if (!customerId) throw new Error(`customerId${REQM}`);
 
     return this.stripeDeleteRequest(`customers/${customerId}/sources/${cardId}`);
   }
