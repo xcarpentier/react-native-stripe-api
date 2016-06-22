@@ -3,7 +3,7 @@ jest.unmock('../Stripe');
 
 describe('Stripe', () => {
 
-  it('failed on return defaultHeader', () => {
+  it('return defaultHeader', () => {
     const Stripe = require('../Stripe').default;
     const api = new Stripe('testKey');
 
