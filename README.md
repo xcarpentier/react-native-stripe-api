@@ -32,10 +32,6 @@ const Stripe = new Stripe(apiKey);
 | addCardToCustomer | Promise | <ul><li>token: string</li><li> customerId: string</li><ul> | Add a new card to a customer |
 | destroyCardOfCustomer | Promise |<ul><li>cardId: string</li><li>customerId: string</li></ul> | Delete a card from a customer |
 
-## FAQ
-### Is it supported and tested both on android and iOS?
-YES
-
 ## Contribution
 
 - [@xcapentier](mailto:contact@xaviercarpentier.com) The main author.
