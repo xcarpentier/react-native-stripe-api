@@ -24,8 +24,6 @@
   },
   "homepage": "https://github.com/xcarpentier/react-native-stripe-api#readme",
   "jest": {
-    "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
-    "setupEnvScriptFile": "jestSupport/env.js",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "packager/react-packager/src/Activity/"
@@ -43,6 +41,7 @@
     "babel-eslint": "6.0.4",
     "babel-jest": "12.1.0",
     "babel-polyfill": "6.9.1",
+    "babel-preset-react-native": "1.9.0",
     "eslint": "2.13.0",
     "eslint-config-airbnb": "9.0.1",
     "eslint-plugin-import": "1.8.1",
