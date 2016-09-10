@@ -10,6 +10,10 @@ The best Stripe library for React Native.
 $ npm i react-native-stripe-api --save
 ```
 
+## Roadmap
+- include a payment form component
+- include react-native-awesome-card-io
+
 ## Setup
 
 ### Stripe API

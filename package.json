@@ -1,6 +1,6 @@
 {
   "name": "react-native-stripe-api",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A small React Native library for Stripe Rest API",
   "main": "src/Stripe.js",
   "scripts": {
