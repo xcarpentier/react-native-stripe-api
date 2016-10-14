@@ -22,6 +22,16 @@ This lib need a Stripe API Key
 ```JavaScript
 const apiKey = '<your Stripe API Key>';
 const Stripe = new Stripe(apiKey);
+
+// Create a Stripe token with new card infos
+const token = await Stripe.createToken('4242424242424242' , '09', '18', '111');
+
+// Create a new customer and link your new card
+const customer = await Stripe.createCustomer(token.id, 'customer@email.com', '<Your user ID>', 'John', 'Doe');
+
+// Create charge, 1 USD
+const charge = await Stripe.createCharge(1 * 100, customer.id, 'Payment example','USD');
+
 ```
 
 ## Functions
