@@ -46,6 +46,9 @@ const charge = await Stripe.createCharge(1 * 100, customer.id, 'Payment example'
 | addCardToCustomer | Promise | <ul><li>token: string</li><li> customerId: string</li><ul> | Add a new card to a customer |
 | destroyCardOfCustomer | Promise |<ul><li>cardId: string</li><li>customerId: string</li></ul> | Delete a card from a customer |
 
+## Platform support 
+* `> Android 4.1-4.4` see https://github.com/xcarpentier/react-native-stripe-api/issues/5
+
 ## Contribution
 
 - [@xcapentier](mailto:contact@xaviercarpentier.com) The main author.
