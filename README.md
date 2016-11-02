@@ -20,6 +20,10 @@ $ yarn add react-native-stripe-api
 
 ## Setup
 
+### Security issue 
+
+https://github.com/xcarpentier/react-native-stripe-api/issues/8
+
 ### Stripe API
 
 This lib need a Stripe API Key
