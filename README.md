@@ -9,6 +9,10 @@ The best Stripe library for React Native.
 ```bash
 $ npm i react-native-stripe-api --save
 ```
+or
+```bash
+$ yarn add react-native-stripe-api
+```
 
 ## Roadmap
 - include a payment form component
