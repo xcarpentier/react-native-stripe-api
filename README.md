@@ -53,6 +53,8 @@ const charge = await client.createCharge(1 * 100, customer.id, 'Payment example'
 | refundCharge | Promise | chargeId: string | Refund a previous charge |
 | addCardToCustomer | Promise | <ul><li>token: string</li><li> customerId: string</li><ul> | Add a new card to a customer |
 | destroyCardOfCustomer | Promise |<ul><li>cardId: string</li><li>customerId: string</li></ul> | Delete a card from a customer |
+| createSubscription | Promise |<ul><li>customerId: string</li><li>plan: string</li></ul> | Subscribes a customer to a subscription plan |
+| retrieveSubscription | Promise |<ul><li>subscriptionId: string</li></ul> | Retrieve the data of a subscription |
 
 ## Platform support 
 * `> Android 4.4` see https://github.com/xcarpentier/react-native-stripe-api/issues/5
@@ -60,6 +62,7 @@ const charge = await client.createCharge(1 * 100, customer.id, 'Payment example'
 ## Contribution
 
 - [@xcapentier](mailto:contact@xaviercarpentier.com) The main author.
+- [@franrios](mailto:fcojriosbello@gmail.com)
 
   PRs are welcome !
 
@@ -68,3 +71,5 @@ const charge = await client.createCharge(1 * 100, customer.id, 'Payment example'
 Feel free to [contact me](mailto:contact@xaviercarpentier.com) or [create an issue](https://github.com/xcarpentier/react-native-stripe-api/issues/new)
 
 > made with ♥
+sdcsdcsdfbret 
+
