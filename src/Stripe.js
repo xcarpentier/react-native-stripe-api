@@ -139,6 +139,23 @@ class Stripe {
 
     return this.stripeDeleteRequest(`customers/${customerId}/sources/${cardId}`);
   }
+
+
+   createSubscription(customer: string, plan: string): Promise {
+     if (!customer) throw new Error(`customer${REQM}`);
+     if (!plan) throw new Error(`plan${REQM}`);
+
+     return this.stripePostRequest('subscriptions', {
+       customer,
+       plan,
+     });
+   }
+
+   retrieveSubscription(id: string): Promise {
+     if (!id) throw new Error(`id${REQM}`);
+
+     return this.stripePostRequest(`subscriptions/${id}`, {});
+   }
 }
 
 
