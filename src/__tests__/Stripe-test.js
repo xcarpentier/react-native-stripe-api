@@ -90,4 +90,26 @@ describe('Stripe', () => {
     }
   });
 
+  it('failed on createSubscription with void', async () => {
+    const Stripe = require('../Stripe').default;
+    const api = new Stripe('testKey');
+
+    try {
+      await api.createSubscription();
+    } catch (error) {
+      expect(error.message).toEqual('customerId is required');
+    }
+  });
+
+  it('failed on retrieveSubscription with void', async () => {
+    const Stripe = require('../Stripe').default;
+    const api = new Stripe('testKey');
+
+    try {
+      await api.retrieveSubscription();
+    } catch (error) {
+      expect(error.message).toEqual('subscriptionId is required');
+    }
+  });
+
 });
