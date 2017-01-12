@@ -71,5 +71,4 @@ const charge = await client.createCharge(1 * 100, customer.id, 'Payment example'
 Feel free to [contact me](mailto:contact@xaviercarpentier.com) or [create an issue](https://github.com/xcarpentier/react-native-stripe-api/issues/new)
 
 > made with ♥
-sdcsdcsdfbret 
 
