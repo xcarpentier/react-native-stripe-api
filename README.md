@@ -17,6 +17,7 @@ $ yarn add react-native-stripe-api
 ## Roadmap
 - include a payment form component
 - include react-native-awesome-card-io
+- a new server project to keep secret
 
 ## Setup
 
