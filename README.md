@@ -1,7 +1,9 @@
 # react-native-stripe-api
 
+[![NPM version](https://badge.fury.io/js/react-native-stripe-api.svg)](http://badge.fury.io/js/react-native-stripe-api)
 [![Downloads](https://img.shields.io/npm/dm/react-native-stripe-api.svg)](https://www.npmjs.com/package/react-native-stripe-api)
 [![Circle CI](https://circleci.com/gh/xcarpentier/react-native-stripe-api.svg?style=svg)](https://circleci.com/gh/xcarpentier/react-native-stripe-api)
+
 
 The best Stripe library for React Native.
 
