@@ -145,8 +145,8 @@ class Stripe {
      if (!planId) throw new Error(`planId${REQM}`);
 
      return this.stripePostRequest('subscriptions', {
-       customerId,
-       planId,
+       customer: customerId,
+       plan: planId,
      });
    }
 
