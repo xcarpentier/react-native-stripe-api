@@ -35,6 +35,17 @@ describe('Stripe', () => {
     }
   });
 
+  it('failed on updateCustomer with void', async () => {
+    const Stripe = require('../Stripe').default;
+    const api = new Stripe('testKey');
+
+    try {
+      await api.updateCustomer();
+    } catch (error) {
+      expect(error.message).toEqual('customerId is required');
+    }
+  });
+
   it('failed on createCharge with void', async () => {
     const Stripe = require('../Stripe').default;
     const api = new Stripe('testKey');

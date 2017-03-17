@@ -96,6 +96,13 @@ class Stripe {
     });
   }
 
+  updateCustomer(customerId: string, properties: Object): Promise {
+    if (!customerId) throw new Error(`customerId${REQM}`);
+    if (!properties) throw new Error(`properties${REQM}`);
+
+    return this.stripePostRequest(`customers/${customerId}`, properties);
+  }
+
   createCharge(amount: number, customer: string, description: string,
     currency: string = 'eur'): Promise {
     if (!amount && amount !== 0) throw new Error(`amount${REQM}`);
