@@ -1,4 +1,4 @@
-# react-native-stripe-api
+# [DEPRECATED] react-native-stripe-api (ie. Security issue)
 
 [![NPM version](https://badge.fury.io/js/react-native-stripe-api.svg)](http://badge.fury.io/js/react-native-stripe-api)
 [![Downloads](https://img.shields.io/npm/dm/react-native-stripe-api.svg)](https://www.npmjs.com/package/react-native-stripe-api)
