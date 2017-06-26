@@ -5,7 +5,12 @@ const STRIPE_URL = 'https://api.stripe.com/v1/';
 
 
 class Stripe {
+  
+  stripePublicKey: string;
 
+  constructor(apiKey: string) {
+    this.stripePublicKey = apiKey;
+  }
   /**
    * Return the default header entries : Accept and Authorization
    * @returns {Object} Default header Accept and Authorization
@@ -13,7 +18,7 @@ class Stripe {
   defaultHeader() {
     return {
       Accept: 'application/json',
-      Authorization: `Bearer ${this.stripeSecretKey}`,
+      Authorization: `Bearer ${this.stripePublicKey}`,
     };
   }
 
