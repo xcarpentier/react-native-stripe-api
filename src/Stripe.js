@@ -28,7 +28,6 @@ class Stripe {
    * @param properties : object, key by form parm
    */
   async stripePostRequest(resource: string, properties: Object): Promise {
-    console.log(JSON.stringify(properties));
     const body = Object.entries(properties)
      .map(([key, value]) => `${key}=${value}`)
      .reduce((previous, current) => `${previous}&${current}`, '');
@@ -61,8 +60,6 @@ class Stripe {
     Object.keys(info).map(key => {
       card[`card[${key}]`] = info[key];
     });
-    console.log(JSON.stringify(card));
-
     return this.stripePostRequest('tokens', card);
   }
 }
