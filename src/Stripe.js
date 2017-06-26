@@ -5,7 +5,7 @@ const STRIPE_URL = 'https://api.stripe.com/v1/';
 
 
 class Stripe {
-  
+
   stripePublicKey: string;
 
   constructor(apiKey: string) {
@@ -28,9 +28,10 @@ class Stripe {
    * @param properties : object, key by form parm
    */
   async stripePostRequest(resource: string, properties: Object): Promise {
+    console.log(JSON.stringify(properties));
     const body = Object.entries(properties)
-      .map(([key, value]) => `${key}=${value}`)
-      .reduce((previous, current) => `${previous}&${current}`, '');
+     .map(([key, value]) => `${key}=${value}`)
+     .reduce((previous, current) => `${previous}&${current}`, '');
 
     const result = await fetch(`${STRIPE_URL}${resource}`, {
       method: 'POST',
@@ -51,27 +52,18 @@ class Stripe {
    * ... address_line2, address_state, address_zip, currency, cvc }
    */
   createToken(info): Promise {
-    let { number,
-      exp_month,
-      exp_year,
-      cvc,
-      address_city,
-      address_state,
-      address_country,
-      address_line1,
-      address_line2,
-      address_zip,
-      currency
-    } = info;
+    if (!info.number) throw new Error(`cardNumber${REQM}`);
+    if (!info.exp_month) throw new Error(`expMonth${REQM}`);
+    if (!info.exp_year) throw new Error(`expYear${REQM}`);
+    if (!info.cvc) throw new Error(`cvc${REQM}`);
 
-    if (!number) throw new Error(`cardNumber${REQM}`);
-    if (!exp_month) throw new Error(`expMonth${REQM}`);
-    if (!exp_year) throw new Error(`expYear${REQM}`);
-    if (!cvc) throw new Error(`cvc${REQM}`);
-
-    return this.stripePostRequest('tokens', {
-      card: info
+    let card = {};
+    Object.keys(info).map(key => {
+      card[`card[${key}]`] = info[key];
     });
+    console.log(JSON.stringify(card));
+
+    return this.stripePostRequest('tokens', card);
   }
 }
 
