@@ -34,7 +34,13 @@ const apiKey = '<your Stripe API Key>';
 const client = new Stripe(apiKey);
 
 // Create a Stripe token with new card infos
-const token = await client.createToken('4242424242424242' , '09', '18', '111');
+const token = await client.createToken({
+       number: '4242424242424242' ,
+       exp_month: '09', 
+       exp_year: '18', 
+       cvc: '111',
+       address_zip: '12345'
+    });
 
 // Create a new customer and link your new card
 // const customer = await client.createCustomer(token.id, 'customer@email.com', '<Your user ID>', 'John', 'Doe');
