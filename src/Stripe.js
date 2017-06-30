@@ -44,21 +44,24 @@ class Stripe {
     return result.json();
   }
 
-
   /**
    * Only operation allowed from client/Using only public token
    * @param info : { number, exp_month, exp_year, address_city, address_country, address_line1,
    * ... address_line2, address_state, address_zip, currency, cvc }
    */
-  createToken(info): Promise {
+  createToken(info: ?Object): Promise {
+    if (!info) throw new Error(`info${REQM}`);
     if (!info.number) throw new Error(`cardNumber${REQM}`);
     if (!info.exp_month) throw new Error(`expMonth${REQM}`);
     if (!info.exp_year) throw new Error(`expYear${REQM}`);
     if (!info.cvc) throw new Error(`cvc${REQM}`);
 
-    let card = {};
-    Object.keys(info).map(key => {
-      card[`card[${key}]`] = info[key];
+    const card = {};
+    Object.keys(info).forEach(key => {
+      if (info) {
+        card[`card[${key}]`] = info[key];
+      }
+      return;
     });
     return this.stripePostRequest('tokens', card);
   }
