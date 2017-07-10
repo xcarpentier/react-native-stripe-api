@@ -1,5 +1,7 @@
 # react-native-stripe-api (only to create token)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xcarpentier/react-native-stripe-api.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://badge.fury.io/js/react-native-stripe-api.svg)](http://badge.fury.io/js/react-native-stripe-api)
 [![Downloads](https://img.shields.io/npm/dm/react-native-stripe-api.svg)](https://www.npmjs.com/package/react-native-stripe-api)
 [![Circle CI](https://circleci.com/gh/xcarpentier/react-native-stripe-api.svg?style=svg)](https://circleci.com/gh/xcarpentier/react-native-stripe-api)
