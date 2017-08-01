@@ -29,7 +29,7 @@ class Stripe {
    */
   async stripePostRequest(resource: string, properties: Object): Promise {
     const body = Object.entries(properties)
-     .map(([key, value]) => `${key}=${value}`)
+     .map(([key, value]) => `card[${key}]=${value}`)
      .reduce((previous, current) => `${previous}&${current}`, '');
 
     const result = await fetch(`${STRIPE_URL}${resource}`, {
@@ -56,13 +56,7 @@ class Stripe {
     if (!info.exp_year) throw new Error(`expYear${REQM}`);
     if (!info.cvc) throw new Error(`cvc${REQM}`);
 
-    const card = {};
-    Object.keys(info).forEach(key => {
-      if (info) {
-        card[`card[${key}]`] = info[key];
-      }
-      return;
-    });
+    const card = Object.assign({}, info);
     return this.stripePostRequest('tokens', card);
   }
 }
