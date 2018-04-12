@@ -3,6 +3,7 @@
 [![NPM version](https://badge.fury.io/js/react-native-stripe-api.svg)](http://badge.fury.io/js/react-native-stripe-api)
 [![Downloads](https://img.shields.io/npm/dm/react-native-stripe-api.svg)](https://www.npmjs.com/package/react-native-stripe-api)
 [![Circle CI](https://circleci.com/gh/xcarpentier/react-native-stripe-api.svg?style=svg)](https://circleci.com/gh/xcarpentier/react-native-stripe-api)
+[![reactnative.gallery](https://img.shields.io/badge/reactnative.gallery-%E2%99%A5-red.svg)](https://reactnative.gallery)
 
 Little Stripe library for React-Native.
 
