@@ -8,15 +8,19 @@
 Little Stripe library for React-Native.
 
 ### Installation
+
 ```bash
 $ npm i react-native-stripe-api --save
 ```
+
 or
+
 ```bash
 $ yarn add react-native-stripe-api
 ```
 
 ## Roadmap
+
 - include a payment form component
 - include react-native-awesome-card-io
 - a new server project to keep secret
@@ -30,17 +34,18 @@ https://github.com/xcarpentier/react-native-stripe-api/issues/8
 ### Stripe API
 
 This lib need a Stripe API Key
+
 ```JavaScript
 import Stripe from 'react-native-stripe-api';
 
-const apiKey = '<your Stripe API Key>';
+const apiKey = '<8fnvZfCliwTZlWe4hk4a4CFf00HsiAgWUD>';
 const client = new Stripe(apiKey);
 
 // Create a Stripe token with new card infos
 const token = await client.createToken({
        number: '4242424242424242' ,
-       exp_month: '09', 
-       exp_year: '18', 
+       exp_month: '09',
+       exp_year: '18',
        cvc: '111',
        address_zip: '12345'
     });
@@ -55,17 +60,17 @@ const token = await client.createToken({
 
 ## Functions
 
-| Name | Return Type | Arguments | Description |
-| --- | --- | --- | --- |
-| createToken | Promise |<ul><li>cardNumber: string</li> <li>expMonth: string</li><li>expYear: string</li><li>cvc: string</li></ul>| Create a new token (equivalent of a new card) |
-| <strike>createCustomer</strike> | Promise |<ul><li>token: string</li><li>email: string</li></ul>| Create a new customer and add card (or  token) |
-| <strike>getCustomer</strike> | Promise | customerId: string | Retrieve customer by its id |
-| <strike>createCharge</strike> | Promise |<ul><li>amount: number</li><li>customer: string</li><li>description: string</li><li>currency: string = 'eur'</li></ul>| Create a new charge |
-| <strike>refundCharge</strike> | Promise | chargeId: string | Refund a previous charge |
-| <strike>addCardToCustomer</strike> | Promise | <ul><li>token: string</li><li> customerId: string</li><ul> | Add a new card to a customer |
-| <strike>destroyCardOfCustomer</strike> | Promise |<ul><li>cardId: string</li><li>customerId: string</li></ul> | Delete a card from a customer |
-| <strike>createSubscription</strike> | Promise |<ul><li>customerId: string</li><li>plan: string</li></ul> | Subscribes a customer to a subscription plan |
-| <strike>retrieveSubscription</strike> | Promise |<ul><li>subscriptionId: string</li></ul> | Retrieve the data of a subscription |
+| Name                                   | Return Type | Arguments                                                                                                              | Description                                   |
+| -------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| createToken                            | Promise     | <ul><li>cardNumber: string</li> <li>expMonth: string</li><li>expYear: string</li><li>cvc: string</li></ul>             | Create a new token (equivalent of a new card) |
+| <strike>createCustomer</strike>        | Promise     | <ul><li>token: string</li><li>email: string</li></ul>                                                                  | Create a new customer and add card (or token) |
+| <strike>getCustomer</strike>           | Promise     | customerId: string                                                                                                     | Retrieve customer by its id                   |
+| <strike>createCharge</strike>          | Promise     | <ul><li>amount: number</li><li>customer: string</li><li>description: string</li><li>currency: string = 'eur'</li></ul> | Create a new charge                           |
+| <strike>refundCharge</strike>          | Promise     | chargeId: string                                                                                                       | Refund a previous charge                      |
+| <strike>addCardToCustomer</strike>     | Promise     | <ul><li>token: string</li><li> customerId: string</li><ul>                                                             | Add a new card to a customer                  |
+| <strike>destroyCardOfCustomer</strike> | Promise     | <ul><li>cardId: string</li><li>customerId: string</li></ul>                                                            | Delete a card from a customer                 |
+| <strike>createSubscription</strike>    | Promise     | <ul><li>customerId: string</li><li>plan: string</li></ul>                                                              | Subscribes a customer to a subscription plan  |
+| <strike>retrieveSubscription</strike>  | Promise     | <ul><li>subscriptionId: string</li></ul>                                                                               | Retrieve the data of a subscription           |
 
 ## Contribution
 
@@ -81,6 +86,5 @@ Feel free to [contact me](mailto:contact@xaviercarpentier.com) or [create an iss
 > made with ♥
 
 ## Hire an expert!
+
 Looking for a ReactNative freelance expert with more than 12 years experience? Contact me from my [website](https://xaviercarpentier.com)!
-
-
